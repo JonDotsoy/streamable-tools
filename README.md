@@ -17,7 +17,7 @@ new ReadableStream().pipeThrough(
 ## SplitStream
 
 ```ts
-import { SplitStream } from "streamable-tools/split-stream.ts";
+import { SplitStream } from "streamable-tools/split-stream";
 
 const readable = new ReadableStream({
   start: (controller) => {
@@ -38,6 +38,8 @@ expect(arr).toEqual([
 ## readableStreamWithController
 
 ```ts
+import { readableStreamWithController } from "streamable-tools//readable-stream-with-controller";
+
 const { readable, controller } = readableStreamWithController<Uint8Array>();
 
 controller.enqueue(new TextEncoder().encode("f"));
