@@ -5,10 +5,10 @@ export class MultiplyStream<T> implements ReadableWritablePair<T, T> {
   controller: ReadableStreamDefaultController<T>;
   writable: WritableStream<T>;
 
-  constructor(...writables: WritableStream<T>[]) {
-    const writers = writables.map((writable) => ({
-      writable,
-      writer: writable.getWriter(),
+  constructor(...readableWritablePairs: { writable: WritableStream<T> }[]) {
+    const writers = readableWritablePairs.map((readableWritablePair) => ({
+      writable: readableWritablePair.writable,
+      writer: readableWritablePair.writable.getWriter(),
     }));
     const { readable, controller } = readableStreamWithController<T>();
     this.readable = readable;

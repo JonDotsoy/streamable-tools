@@ -15,12 +15,16 @@ test("", async () => {
     },
   }).pipeThrough(
     new MultiplyStream(
-      new WritableStream({
-        write: (chunk) => obj1.call(chunk),
-      }),
-      new WritableStream({
-        write: (chunk) => obj1.call(chunk),
-      }),
+      {
+        writable: new WritableStream({
+          write: (chunk) => obj1.call(chunk),
+        }),
+      },
+      {
+        writable: new WritableStream({
+          write: (chunk) => obj1.call(chunk),
+        }),
+      },
     ),
   );
 
