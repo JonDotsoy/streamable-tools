@@ -1,6 +1,6 @@
 # streamable-tools
 
-## Multiply output
+## MultiplyStream
 
 ```ts
 import { MultiplyStream } from "streamable-tools/multiply-stream";
