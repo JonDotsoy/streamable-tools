@@ -34,3 +34,18 @@ expect(arr).toEqual([
   new TextEncoder().encode("biz"),
 ]);
 ```
+
+## readableStreamWithController
+
+```ts
+const { readable, controller } = readableStreamWithController<Uint8Array>();
+
+controller.enqueue(new TextEncoder().encode("f"));
+controller.enqueue(new TextEncoder().encode("o"));
+controller.enqueue(new TextEncoder().encode("o"));
+controller.close();
+
+const output = await readableStreamToText(readable);
+
+expect(output).toEqual("foo");
+```
