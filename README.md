@@ -38,7 +38,7 @@ expect(arr).toEqual([
 ## readableStreamWithController
 
 ```ts
-import { readableStreamWithController } from "streamable-tools//readable-stream-with-controller";
+import { readableStreamWithController } from "streamable-tools/readable-stream-with-controller";
 
 const { readable, controller } = readableStreamWithController<Uint8Array>();
 
