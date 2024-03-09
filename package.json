@@ -15,6 +15,10 @@
       "default": "./dist/esm/split-stream.js"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JonDotsoy/streamable-tools.git"
+  },
   "scripts": {
     "build@esm": "tsc --project tsconfig.esm.json --outdir ./dist/esm",
     "fmt": "prettier -w ."
