@@ -1,6 +1,6 @@
 import { test, expect } from "bun:test";
 import { iterableToReadableStream } from "./iterable-to-readable-stream";
-import { readableStreamToArray } from "bun";
+import { readableStreamToArray, readableStreamToText } from "bun";
 
 test("", async () => {
   const iterable = [1, 2, 3];
@@ -36,4 +36,15 @@ test("", async () => {
   );
 
   expect(items).toEqual([1, 2, 3]);
+});
+
+test("", async () => {
+  const iterable = function* () {
+    yield "Hello ";
+    yield "world!";
+  };
+
+  const text = await readableStreamToText(iterableToReadableStream(iterable()));
+
+  expect(text).toEqual("Hello world!");
 });
