@@ -14,6 +14,9 @@
     },
     "./split-stream": {
       "default": "./dist/esm/split-stream.js"
+    },
+    "./iterable-to-readable-stream": {
+      "default": "./dist/esm/iterable-to-readable-stream.js"
     }
   },
   "repository": {
