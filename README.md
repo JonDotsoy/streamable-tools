@@ -59,3 +59,18 @@ const output = await readableStreamToText(readable);
 
 expect(output).toEqual("foo");
 ```
+
+## iterableToReadableStream
+
+Converts a JavaScript iterable object into a `ReadableStream`, allowing for the efficient streaming of iterable data as chunks through the Streams API. This is particularly useful for streaming large datasets or dynamic content that is generated on-the-fly, without having to allocate and hold the entire data in memory at once.
+
+```ts
+const iterable = function* () {
+  yield "Hello ";
+  yield "world!";
+};
+
+const text = await readableStreamToText(iterableToReadableStream(iterable()));
+
+expect(text).toEqual("Hello world!");
+```
