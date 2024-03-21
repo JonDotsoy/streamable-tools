@@ -4,14 +4,12 @@
     "noEmit": false,
     "declaration": true,
     "allowImportingTsExtensions": false,
+    "moduleResolution": "Node",
+    "target": "ES2016",
+    "module": "CommonJS",
+    "verbatimModuleSyntax": false,
     "sourceRoot": "./src/",
     "inlineSourceMap": true
   },
-  "exclude": [
-    "./dist/",
-    "./lib/",
-    "**/*.spec.ts",
-    "**/tests/**",
-    "**/__templates__/**"
-  ]
+  "exclude": ["./dist/", "./lib/", "**/*.spec.ts", "**/tests/**"]
 }

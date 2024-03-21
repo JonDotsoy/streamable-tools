@@ -2,34 +2,61 @@
   "name": "streamable-tools",
   "description": "`streamable-tools` is a JS/TS library for easy stream manipulation in web apps, offering utilities like `MultiplyStream` for data propagation, `SplitStream` for data splitting, and tools for stream creation and control.",
   "version": "0.1.5",
-  "module": "index.ts",
-  "type": "module",
   "license": "MIT",
+  "types": "./index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./lib/types/*"
+      ]
+    }
+  },
   "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "default": "./lib/cjs/index.js"
+    },
     "./multiply-stream": {
-      "default": "./dist/esm/multiply-stream.js"
+      "types": "./lib/types/multiply-stream.d.ts",
+      "import": "./lib/esm/multiply-stream.js",
+      "default": "./lib/cjs/multiply-stream.js"
     },
     "./readable-stream-with-controller": {
-      "default": "./dist/esm/readable-stream-with-controller.js"
+      "types": "./lib/types/readable-stream-with-controller.d.ts",
+      "import": "./lib/esm/readable-stream-with-controller.js",
+      "default": "./lib/cjs/readable-stream-with-controller.js"
     },
     "./split-stream": {
-      "default": "./dist/esm/split-stream.js"
+      "types": "./lib/types/split-stream.d.ts",
+      "import": "./lib/esm/split-stream.js",
+      "default": "./lib/cjs/split-stream.js"
     },
     "./iterable-to-readable-stream": {
-      "default": "./dist/esm/iterable-to-readable-stream.js"
+      "types": "./lib/types/iterable-to-readable-stream.d.ts",
+      "import": "./lib/esm/iterable-to-readable-stream.js",
+      "default": "./lib/cjs/iterable-to-readable-stream.js"
     }
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/JonDotsoy/streamable-tools.git"
   },
+  "files": [
+    "./src/",
+    "./lib/cjs/",
+    "./lib/types/",
+    "./lib/esm/"
+  ],
   "scripts": {
-    "build@esm": "tsc --project tsconfig.esm.json --outdir ./dist/esm",
+    "prepack": "make build",
+    "build": "make build",
     "fmt": "prettier -w ."
   },
   "devDependencies": {
     "@types/bun": "latest",
     "prettier": "^3.2.5",
+    "semver": "^7.6.0",
     "typescript": "^5.4.2"
   },
   "peerDependencies": {

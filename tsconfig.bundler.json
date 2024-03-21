@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "allowImportingTsExtensions": false,
+    "moduleResolution": "Bundler",
+    "target": "ES2015",
+    "module": "amd",
+    "verbatimModuleSyntax": false
+  },
+  "exclude": ["./dist/", "**/*.spec.ts"]
+}
