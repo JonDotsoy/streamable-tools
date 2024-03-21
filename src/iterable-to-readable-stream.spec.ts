@@ -1,5 +1,5 @@
 import { test, expect } from "bun:test";
-import { iterableToReadableStream } from "./iterable-to-readable-stream";
+import { iterableToReadableStream } from "./iterable-to-readable-stream.js";
 import { readableStreamToArray, readableStreamToText } from "bun";
 
 test("", async () => {

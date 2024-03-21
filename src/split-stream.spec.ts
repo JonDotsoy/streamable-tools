@@ -1,7 +1,7 @@
 import { test, expect } from "bun:test";
-import { SplitStream } from "./split-stream";
+import { SplitStream } from "./split-stream.js";
 import { readableStreamToArray } from "bun";
-import { MultiplyStream } from "./multiply-stream";
+import { MultiplyStream } from "./multiply-stream.js";
 
 test("", async () => {
   const readable = new ReadableStream({

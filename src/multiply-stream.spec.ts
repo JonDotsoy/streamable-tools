@@ -1,6 +1,6 @@
 import { readableStreamToArray, readableStreamToText } from "bun";
 import { test, spyOn, expect } from "bun:test";
-import { MultiplyStream } from "./multiply-stream";
+import { MultiplyStream } from "./multiply-stream.js";
 
 test("", async () => {
   const obj1 = { call: (...args: any[]): any => {} };

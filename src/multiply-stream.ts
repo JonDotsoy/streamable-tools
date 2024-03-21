@@ -1,4 +1,4 @@
-import { readableStreamWithController } from "./readable-stream-with-controller";
+import { readableStreamWithController } from "./readable-stream-with-controller.js";
 
 export class MultiplyStream<T> implements ReadableWritablePair<T, T> {
   readable: ReadableStream<T>;

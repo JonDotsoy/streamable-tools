@@ -1,5 +1,5 @@
 import { test, expect } from "bun:test";
-import { readableStreamWithController } from "./readable-stream-with-controller";
+import { readableStreamWithController } from "./readable-stream-with-controller.js";
 import { readableStreamToText } from "bun";
 
 test("", async () => {
