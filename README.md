@@ -65,12 +65,94 @@ expect(output).toEqual("foo");
 Converts a JavaScript iterable object into a `ReadableStream`, allowing for the efficient streaming of iterable data as chunks through the Streams API. This is particularly useful for streaming large datasets or dynamic content that is generated on-the-fly, without having to allocate and hold the entire data in memory at once.
 
 ```ts
+import { iterableToReadableStream } from "streamable-tools/iterable-to-readable-stream";
+
 const iterable = function* () {
   yield "Hello ";
   yield "world!";
 };
 
-const text = await readableStreamToText(iterableToReadableStream(iterable()));
+const readable = iterableToReadableStream(iterable());
+
+const text = await readableStreamToText(readable);
 
 expect(text).toEqual("Hello world!");
+```
+
+## readableStreamTransformChunk
+
+```ts
+import { readableStreamTransformChunk } from "streamable-tools/readable-stream-transforms";
+
+const nextReadable = readableStreamTransformChunk(readable, toUint8Array);
+
+readable; // => ReadableStream<string> ['foo', 'biz']
+nextReadable; // => ReadableStream<Uint8Array> [ Uint8Array(3) [ 102, 111, 111 ], Uint8Array(3) [ 98, 105, 122 ] ]
+```
+
+## readableStreamToIterable
+
+```ts
+import { readableStreamToIterable } from "streamable-tools/readable-stream-transforms";
+
+const iterable = readableStreamToIterable(readable);
+
+readable; // => ReadableStream<string> [ 'foo', 'biz' ]
+iterable.next().value; // => 'foo'
+iterable.next().value; // => 'biz'
+```
+
+## readableStreamToArray
+
+```ts
+import { readableStreamToArray } from "streamable-tools/readable-stream-transforms";
+
+const arr = readableStreamToArray(readable);
+
+readable; // => ReadableStream<string> [ 'foo', 'biz' ]
+arr; // => [ 'foo', 'biz' ]
+```
+
+## readableStreamToText
+
+```ts
+import { readableStreamToText } from "streamable-tools/readable-stream-transforms";
+
+const text = readableStreamToText(readable);
+
+readable; // => ReadableStream<string> [ 'foo', 'biz' ]
+text; // => 'foobiz'
+```
+
+## readableStreamToJson
+
+```ts
+import { readableStreamToJson } from "streamable-tools/readable-stream-transforms";
+
+const obj = readableStreamToJson(readable);
+
+readable; // => ReadableStream<string> [ '{', '"n":1}' ]
+obj; // => { n: 1 }
+```
+
+## readableStreamToTextList
+
+```ts
+import { readableStreamToTextList } from "streamable-tools/readable-stream-transforms";
+
+const list = readableStreamToTextList(readable);
+
+readable; // => ReadableStream<string> [ 'foo\nbiz\n', 'taz' ]
+list; // => AsyncIterable<string> [ 'foo', 'biz', 'taz' ]
+```
+
+## readableStreamToJsonList
+
+```ts
+import { readableStreamToJsonList } from "streamable-tools/readable-stream-transforms";
+
+const list = readableStreamToJsonList(readable);
+
+readable; // => ReadableStream<string> [ '{"n":1}\n{"n":2}\n', '{"n":', '3}' ]
+list; // => AsyncIterable<Object> [ { n: 1 }, { n: 2 }, { n: 3 } ]
 ```
