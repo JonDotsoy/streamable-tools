@@ -36,6 +36,11 @@
       "types": "./lib/types/iterable-to-readable-stream.d.ts",
       "import": "./lib/esm/iterable-to-readable-stream.js",
       "default": "./lib/cjs/iterable-to-readable-stream.js"
+    },
+    "./readable-stream-transforms": {
+      "types": "./lib/types/readable-stream-transforms.d.ts",
+      "import": "./lib/esm/readable-stream-transforms.js",
+      "default": "./lib/cjs/readable-stream-transforms.js"
     }
   },
   "repository": {

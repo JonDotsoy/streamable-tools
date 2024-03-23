@@ -5,11 +5,9 @@ import {
   readableStreamToText,
   readableStreamToJson,
   readableStreamToJsonList,
-} from "./readable-stream-tranforms";
+} from "./readable-stream-transforms";
 import {} from "bun";
 import { readableStreamWithController } from "./readable-stream-with-controller";
-import { SplitStream } from ".";
-import { toArrayBuffer } from "./utils/to-uint8array";
 
 namespace Samples {
   export const readableSample1 = () => {

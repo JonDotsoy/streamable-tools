@@ -1,5 +1,5 @@
-import { SplitStream } from ".";
-import { toArrayBuffer } from "./utils/to-uint8array";
+import { SplitStream } from "./split-stream.js";
+import { toArrayBuffer } from "./utils/to-uint8array.js";
 
 export const readableStreamTransformChunk = <T, O>(
   readable: ReadableStream<T>,
