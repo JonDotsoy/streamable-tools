@@ -66,5 +66,12 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "keywords": [
+    "stream",
+    "streamable",
+    "tools",
+    "readablestream",
+    "writablestream"
+  ]
 }
