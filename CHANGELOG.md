@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/JonDotsoy/streamable-tools/compare/streamable-tools-v0.2.0...streamable-tools-v0.2.1) (2024-03-24)
+
+
+### Miscellaneous Chores
+
+* release 0.2.1 ([681687e](https://github.com/JonDotsoy/streamable-tools/commit/681687e79e6275556e8cfff6e56d950b1fb3adbb))
+
 ## [0.2.0](https://github.com/JonDotsoy/streamable-tools/compare/streamable-tools-v0.1.0...streamable-tools-v0.2.0) (2024-03-24)
 
 
