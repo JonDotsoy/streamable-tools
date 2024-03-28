@@ -1,7 +1,7 @@
 {
   "name": "streamable-tools",
   "description": "`streamable-tools` is a JS/TS library for easy stream manipulation in web apps, offering utilities like `MultiplyStream` for data propagation, `SplitStream` for data splitting, and tools for stream creation and control.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "types": "./index.d.ts",
   "typesVersions": {
@@ -36,6 +36,11 @@
       "types": "./lib/types/iterable-to-readable-stream.d.ts",
       "import": "./lib/esm/iterable-to-readable-stream.js",
       "default": "./lib/cjs/iterable-to-readable-stream.js"
+    },
+    "./readable-stream-with-pipe-stream": {
+      "types": "./lib/types/readable-stream-with-pipe-stream.d.ts",
+      "import": "./lib/esm/readable-stream-with-pipe-stream.js",
+      "default": "./lib/cjs/readable-stream-with-pipe-stream.js"
     },
     "./readable-stream-transforms": {
       "types": "./lib/types/readable-stream-transforms.d.ts",
