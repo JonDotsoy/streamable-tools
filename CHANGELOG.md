@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/JonDotsoy/streamable-tools/compare/streamable-tools-v0.2.1...streamable-tools-v0.3.0) (2024-03-28)
+
+
+### Features
+
+* add `readableStreamWithPipeStream` feature ([ffdb4ee](https://github.com/JonDotsoy/streamable-tools/commit/ffdb4ee3b7b937800ebbcc72928cbd8621a07d4f))
+
 ## [0.2.1](https://github.com/JonDotsoy/streamable-tools/compare/streamable-tools-v0.2.0...streamable-tools-v0.2.1) (2024-03-24)
 
 
