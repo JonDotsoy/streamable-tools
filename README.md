@@ -79,6 +79,19 @@ const text = await readableStreamToText(readable);
 expect(text).toEqual("Hello world!");
 ```
 
+## readableStreamWithPipeStream
+
+```ts
+import { readableStreamWithPipeStream } from "streamable-tools/readable-stream-with-pipe-stream";
+
+const { readable, pipeStream } = readableStreamWithPipeStream();
+
+await otherReadable.pipeThrough(pipeStream);
+
+otherReadable; // => ReadableStream<string> ['foo', 'biz']
+readable; // => ReadableStream<string> ['foo', 'biz']
+```
+
 ## readableStreamTransformChunk
 
 ```ts
